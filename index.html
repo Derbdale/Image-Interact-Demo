@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Image Interact Editor Test</title>
+  <link type="text/css" rel="stylesheet" href="dist/css/image-interact-editor.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Ces2016%2Ces2017%2Ces2018%2Ces2019%2Cdefault%2CArray.prototype.forEach%2CElement.prototype.classList%2CElement.prototype.append%2CDocumentFragment.prototype.append%2CEvent%2CNode.prototype.contains%2CNodeList.prototype.forEach%2Cdocument.querySelector"></script>
+  <script src="https://unpkg.com/panzoom@9.2.4/dist/panzoom.min.js"></script>
+  <script src="dist/image-interact-editor.min.js"></script>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<img src="https://picsum.photos/id/8/640/480" alt="Test Picture" id="test-pic">
+
+<script>
+  const testEl = document.querySelector('#test-pic');
+  const editor = new ImageInteractEditor(testEl, {
+    plugins: {
+      panzoom: {}
+    },
+    pointType: 'rect',
+    pointSize: 5
+  });
+</script>
+</body>
+</html>
